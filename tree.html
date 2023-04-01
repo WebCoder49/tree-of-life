@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="visual-tree.js"></script>
+    <link rel="icon" href="media/favicon.png">
+
+    <title>Tree of Life - Visual Tree Generator</title>
+</head>
+<body>
+    <nav><h1 style="float: left; position: inline;">Tree of Life</h1> 
+        <p style="float: right;"><a href="index.html">Tree</a> / <a href="search.html">Search</a> / <a href="tree.html">Visual Tree Generator</a></p>
+        <p id="loading">Loading...</p> 
+    </nav>
+    <main>
+    <h1><i>Visual</i> Tree Generator</h1>
+    <ol>
+        <li><b>Bookmark</b> species/groups/taxa in the <a href="index.html">main page.</a></li>
+        <li><b>Choose</b> the colours and options for your visual tree.</li>
+        <li><b>Generate</b> an image of a simple tree of life containing your species using the generate button!</b></li>
+    </ol>
+    <h2>Bookmarked Taxa:</h2>
+    <p>These are the taxa that will appear on your tree. To remove any, click them and then click '<em>Remove Bookmark</em>'.</p>
+    <button onclick="if(confirm('Are you sure you want to remove all bookmarks? 🐍')) localStorage.clear(); showBookmarkedTaxa(); document.querySelector('#species-list').innerHTML = '<li><em style=\'cursor: pointer;\' onclick=\'showBookmarkedTaxa();\'>[Refresh List]</em></li><li>Bookmarks deleted.</li>';">Delete All</button>
+    <ul id="species-list" style="height: 100px; overflow: auto; columns: 3;">
+        <li>Loading...</li>
+    </ul>
+    <h2>Customise Settings</h2>
+    Background Colour: <input value="#ffffff" type="color" onchange="tree.s.background_color = this.value"/><br/>
+    Line Colour: <input value="#006400" type="color" onchange="tree.s.line_color = this.value"/><br/>
+    Line Width: <input value="2" type="range" onchange="tree.s.line_w = Number(this.value)" min="1" max="20"/><br/>
+    Label Colour: <input value="#90ee90" type="color" onchange="tree.s.label_color = this.value"/><br/>
+    Label Type: <select value="photos" onchange="tree.s.label_type = this.value">
+        <option value="photos">Photos</option>
+        <option disabled style="font-size: smaller;"> (Please be mindful of copyright and attribution)</option>
+        <option value="numbers">Numbers</option>
+    </select><br/>
+    Tree Size: <input value="50" type="range" onchange="tree.s.block_w = Number(this.value); tree.s.block_h = Number(this.value);" min="15" max="250"/><br/>
+    <h2>Generate Tree</h2>
+    <button onclick="tree.generate();">Generate</button><br/>
+    <canvas id="tree_canvas" height="200px" width="1000px">HTML5 Canvas is not supported.</canvas>
+    <h3>Legend</h3>
+    <dl id="tree_legend" style="columns: 3;">
+        <dt>Press the <em>Generate</em> button to generate</dt>
+        <dd>...then, the tree will be generated.</dd>
+    </dl>
+    </main>
+    <footer><em>Powered by <a href="https://inaturalist.org/">iNaturalist</a>.</em> Please try to avoid sending requests (by searching / clicking a taxon link) more than 60 times every minute / 10,000 times a day, so there is not too much traffic.
+        <br/><iframe src="https://webcoder49.github.io/madeby.html"></iframe></footer>
+</body>
+</html>

@@ -1,0 +1,158 @@
+* {
+    font-family: 'RocknRoll One', sans-serif;
+}
+body {
+    background-color: #111;
+    color: white;
+
+    margin: 8px;
+    padding: 0;
+}
+input, button, select {
+    background-color: #333;
+    color: white;
+    border: 2px solid #000;
+
+    appearance: none;
+    border-radius: 10px;
+    min-height: 20px;
+    margin: 5px;
+    padding: 5px;
+
+    font-size: 150%;
+}
+button, select {
+    cursor: pointer!important;
+}
+input:focus, select:focus, button:hover {
+    outline: none;
+    background-color: #030;
+}
+a {
+    color: yellow;
+}
+a img {
+    height: 3em;
+    width: 3em;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+img {
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #020;
+    color: lightgreen;
+    margin: 0;
+    padding: 10px;
+    font-size: 80%;
+
+    text-align: center;
+
+    border-radius: 5px 5px 0px 0px;
+    margin: -5px;
+    margin-bottom: -8px;
+    border: 5px solid #030;
+    border-bottom: 0;
+}
+
+footer iframe {
+    display: inline-block;
+
+    border: 0;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+main {
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+main * {
+    max-width: calc(100vw - 46px);
+}
+
+nav {
+    background-color: #020;
+    color: lightgreen;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px;
+    width: calc(100% - 20px);
+    float: left; /* Prevent Collapse */
+
+    border-radius: 0px 0px 5px 5px;
+    margin: -5px;
+    margin-top: -8px;
+    border: 5px solid #030;
+    border-top: 0;
+}
+
+nav #loading {
+    color: lightskyblue;
+    float: left;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    width: calc(100% - 10px);
+    font-size: 20pt;
+    height: 30pt;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+nav #loading.closed {
+    opacity: 0;
+    height: 0;
+}
+#bookmark-section {
+    width: 100%;
+    float: right;
+    text-align: right;
+}
+#bookmark-section form, select#bookmarks {
+    margin: 2px;
+}
+
+#tree_canvas {
+    border: 2px solid black;
+    background-color: white;
+    margin: 10px;
+    width: calc(100% - 20px);
+    transition: all 0.5s;
+}
+
+b {
+    color: yellow;
+}
+
+::selection {
+    color: lightgreen;
+    background-color: black;
+}
+footer ::selection {
+    color: yellow;
+}
+nav ::selection {
+    color: yellow;
+}
+#results {
+    columns: 2;
+}
+
+.conservation_status {
+    background-color: red;
+    color: white;
+    font-size: larger;
+    padding-left:0.5em;
+    padding-right:0.5em;
+    line-height: 2em;
+    border-radius: 1em;
+    font-variant: small-caps;
+    box-shadow: 0.375em 0.375em rgba(255, 0, 0, 0.25), 0.25em 0.25em rgba(255, 0, 0, 0.5), 0.125em 0.125em rgba(255, 0, 0, 0.75);
+}

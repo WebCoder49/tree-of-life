@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="media/favicon.png">
+
+    <title>Tree of Life</title>
+</head>
+<body>
+    <nav><h1 style="float: left; position: inline;">Tree of Life</h1> 
+        <p style="float: right;"><a href="index.html">Tree</a> / <a href="search.html">Search</a> / <a href="tree.html">Visual Tree Generator</a></p>
+        <div id="bookmark-section" method="">
+            <button id="bookmarkButton" onclick="setTimeout(bookmarks.create, 100); // So click does not go onto next evt">Save Bookmark</button>
+            <select id="bookmarks" onchange="getTaxon(this.value, loadTaxon); this.value='-1';">
+                <option value="-1">Go To Bookmark...</option>
+                <option value="-2" disabled>Loading...</option>
+            </select>
+        </div>
+        <p id="loading">Loading...</p>
+    </nav>
+    <main><noscript>This requires JavaScript.</noscript></main>
+    <footer><em>Powered by <a href="https://inaturalist.org/">iNaturalist</a>.</em> Please try to avoid sending requests (by searching / clicking a taxon link) more than 60 times every minute / 10,000 times a day, so there is not too much traffic.
+        <br/><iframe src="https://webcoder49.github.io/madeby.html"></iframe></footer>
+</body>
+</html>
